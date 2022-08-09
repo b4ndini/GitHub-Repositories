@@ -1,5 +1,7 @@
 package com.lfelipe.githubrepositories.model
 
+import com.google.gson.annotations.SerializedName
+
 data class RepoDataItem(
     val allow_forking: Boolean,
     val archive_url: String,
@@ -25,7 +27,8 @@ data class RepoDataItem(
     val forks: Int,
     val forks_count: Int,
     val forks_url: String,
-    val full_name: String,
+    @SerializedName("full_name")
+    val fullName: String,
     val git_commits_url: String,
     val git_refs_url: String,
     val git_tags_url: String,
@@ -57,13 +60,15 @@ data class RepoDataItem(
     val open_issues: Int,
     val open_issues_count: Int,
     val owner: Owner,
-    val `private`: Boolean,
+    @SerializedName("private")
+    val private: Boolean,
     val pulls_url: String,
     val pushed_at: String,
     val releases_url: String,
     val size: Int,
     val ssh_url: String,
-    val stargazers_count: Int,
+    @SerializedName("stargazers_count")
+    val stargazersCount: Int,
     val stargazers_url: String,
     val statuses_url: String,
     val subscribers_url: String,

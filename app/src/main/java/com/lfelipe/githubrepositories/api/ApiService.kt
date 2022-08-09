@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiService {
 
-    val gitHubApi = getGitHubApiClient().create(GitHubApi::class.java)
+    val gitHubApi: GitHubApi = getGitHubApiClient().create(GitHubApi::class.java)
 
     private fun getGitHubApiClient(): Retrofit {
         return Retrofit.Builder()

@@ -20,7 +20,7 @@ class ReposViewModel : ViewModel(){
                     reposLiveData.postValue(response.data as ReposList?)
                 }
                 is ResponseApi.Error -> {
-                   // errorMsgLiveData.postValue(response.msg)
+
                 }
             }
         }

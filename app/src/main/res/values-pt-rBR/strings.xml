@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GitHub Repositories</string>
+    <string name="app_name">Repositórios GitHub</string>
     <string name="owner_picture"> </string>
     <string name="repository_title">GitHub Repositories</string>
     <string name="repo_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac elementum magna, eget ullamcorper massa. Vivamus elementum porttitor sem, a sodales nisl ullamcorper id. Fusce ut elit in tortor tincidunt imperdiet.</string>
