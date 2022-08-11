@@ -5,4 +5,5 @@
     <string name="repository_title">GitHub Repositories</string>
     <string name="repo_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac elementum magna, eget ullamcorper massa. Vivamus elementum porttitor sem, a sodales nisl ullamcorper id. Fusce ut elit in tortor tincidunt imperdiet.</string>
     <string name="stargazers_count">0</string>
+    <string name="empty_repository_description">Sem descrição</string>
 </resources>

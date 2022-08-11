@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 class ReposViewModel : ViewModel(){
 
     var reposLiveData: MutableLiveData<ReposList> = MutableLiveData()
+    val errorMsgLiveData: MutableLiveData<String> = MutableLiveData()
     private val repository = ReposRepository()
 
     fun getReposList() {
@@ -20,7 +21,7 @@ class ReposViewModel : ViewModel(){
                     reposLiveData.postValue(response.data as ReposList?)
                 }
                 is ResponseApi.Error -> {
-
+                    errorMsgLiveData.postValue(response.msg)
                 }
             }
         }

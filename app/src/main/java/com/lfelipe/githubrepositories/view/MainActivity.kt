@@ -2,9 +2,9 @@ package com.lfelipe.githubrepositories.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.lfelipe.githubrepositories.R
 import com.lfelipe.githubrepositories.databinding.ActivityMainBinding
 import com.lfelipe.githubrepositories.viewmodel.ReposViewModel
 
@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this).get(ReposViewModel::class.java)
+        viewModel = ViewModelProvider(this)[ReposViewModel::class.java]
         viewModel.getReposList()
         setObservers()
     }
@@ -28,11 +28,13 @@ class MainActivity : AppCompatActivity() {
             list.let {
                 binding.rvReposList.apply {
                     layoutManager =
-                        LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                        LinearLayoutManager(context)
                     adapter = MainAdapter(list)
                 }
             }
         }
+        viewModel.errorMsgLiveData.observe(this){ errorMsg ->
+            Toast.makeText(this, "Erro: $errorMsg", Toast.LENGTH_LONG).show()
+        }
     }
-
 }
